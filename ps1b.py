@@ -1,6 +1,7 @@
+
 # Problem Set 1
 # Name: Kevin Wang
-# Time Spent: 2:00
+# Time Spent: 1:00
 
 
 # Problem 2 - Paying off in a year
@@ -24,13 +25,25 @@ def calculate():
 		total_payment += payment
 		print(total_payment)
 		b = new_balance
+	return new_balance
 
-calculate()
+nb = calculate()
 
-if new_balance > total_payment:
-	payment +=10
-	calculate()
-else:	
-	print("\nRESULT")
-	print("Monthly payment to pay off debt in 1 year: " + str(months))
-	print("Balance: " + str(balance))
+def check():
+	if nb > 0:
+		print("FALSE")
+		payment += 10
+		calculate()
+		check()
+	else:
+		return True	
+
+check()
+
+# if nb > 0:
+# 	payment +=10
+# 	calculate()
+# else:	
+# 	print("\nRESULT")
+# 	print("Monthly payment to pay off debt in 1 year: " + str(months))
+# 	print("Balance: " + str(balance))
